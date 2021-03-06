@@ -11,6 +11,10 @@
 # production
 /build
 
+# 깃 허브에서 추적방지
+#API KEYs
+.env
+
 # misc
 .DS_Store
 .env.local
