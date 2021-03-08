@@ -1,14 +1,13 @@
-import React, { useRef } from 'react';
 import styles from './search_header.module.css';
+import React, { memo, useRef } from 'react';
 
 //검색이라는 이벤트가 발생하면 callback함수를 불러
 //onSearch에 검색된 결과값을 호출해줄거다.
-const SearchHeader = ({ onSearch }) => {
+const SearchHeader = memo(({ onSearch }) => {
     const inputRef = useRef();
 
     const handleSearch = () => {
         const value = inputRef.current.value;
-        console.log(value);
         onSearch(value);
     };
     const onClick = () => {
@@ -30,6 +29,7 @@ const SearchHeader = ({ onSearch }) => {
             <img className={styles.buttonImg} src="images/search.png" alt="search" />
         </button>
     </header>
-};
+}
+);
 
 export default SearchHeader;
